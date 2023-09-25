@@ -9,6 +9,5 @@ echo "Hello World!" > sudo /var/www/html/index.html
 
 replacement_string="server_name _;\n\trewrite ^\/redirect_me https:\/\/github.com\/janemumbi730 permanent;"
 sudo sed -i "s/server_name _;/$replacement_string/" /etc/nginx/sites-enabled/default
-~                                                                                         
 
 sudo service nginx restart
