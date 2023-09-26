@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 # 1nstall nginx on web server
 #redirects to my github
+#displays 404 error message
 
 sudo apt-get -y update
 sudo apt-get -y install nginx
