@@ -30,5 +30,6 @@ def gather_data_to_json():
     with open(filename, "w") as f:
         json.dump(data, f)
 
+
 if __name__ == "__main__":
     gather_data_to_json()
