@@ -32,5 +32,7 @@ def gather_data_to_csv():
             writer.writerow({"USER_ID": argv[1], "USERNAME": USERNAME,
                              "TASK_COMPLETED_STATUS": task[0],
                              "TASK_TITLE": task[1]})
+
+
 if __name__ == "__main__":
     gather_data_to_csv()
