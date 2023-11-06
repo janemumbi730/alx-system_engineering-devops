@@ -1,5 +1,5 @@
 <p align="center">
-	<img src="https://github.com/janemumbi730/alx-system_engineering-devops/0x19-postmortem/Screenshot (48).png"/>
+	<img src="https://github.com/janemumbi730/alx-system_engineering-devops/blob/main/0x19-postmortem/Screenshot (48).png"/>
 </p>
 ## Server Error
 
