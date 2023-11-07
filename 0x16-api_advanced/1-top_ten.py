@@ -18,6 +18,7 @@ def top_ten(subreddit):
                             params=params, allow_redirects=False)
 
     if response.status_code == 200:
+ 
         data = response.json()
 
         hotposts = data['data']['children']
