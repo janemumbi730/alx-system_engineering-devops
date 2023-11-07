@@ -12,11 +12,13 @@ def count_words(subreddit, word_list, after=None, counts=None):
     base_url = "https://www.reddit.com/r/{}/hot.json".format(subreddit)
     headers = {'User-Agent': 'your-user-agent'}
     response = requests.get(base_url, headers=headers, params={'after': after})
+
     if response.status_code != 200:
         if response.status_code == 302:
             print("Invalid subreddit or no posts found.")
         return
     data = response.json()
+
     for post in data['data']['children']:
         title = post['data']['title'].lower()
         for word in word_list:
