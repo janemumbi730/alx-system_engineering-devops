@@ -1,17 +1,19 @@
 #!/usr/bin/python3
 
-"""keywords counter"""
+"""Count keywords"""
 import requests
 from collections import Counter
 
 
 def count_words(subreddit, word_list, after=None, counts=None):
-    """keywords counters"""
+    """Count keywords"""
+
     if counts is None:
         counts = Counter()
 
     base_url = "https://www.reddit.com/r/{}/hot.json".format(subreddit)
     headers = {'User-Agent': 'your-user-agent'}
+
     response = requests.get(base_url, headers=headers, params={'after': after})
 
     if response.status_code != 200:
