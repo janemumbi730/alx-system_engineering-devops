@@ -5,6 +5,7 @@ import requests
 
 def count_words(subreddit, word_list, after=None, count=None, results=None):
         """Count keywords for given list in API reddit"""
+
     if after is None:
         count = {}
         results = {}
@@ -16,6 +17,7 @@ def count_words(subreddit, word_list, after=None, count=None, results=None):
 
     if response.status_code == 200:
         data = response.json()
+
         for topic in data['data']['children']:
             title = topic['data']['title'].lower()
             for word in word_list:
@@ -37,6 +39,7 @@ def count_words(subreddit, word_list, after=None, count=None, results=None):
                 print(f"{word}: {count}")
         else:
             count_words(subreddit, word_list, after, count, results)
+
 
 if __name__ == '__main__':
     subreddit = "programming"
