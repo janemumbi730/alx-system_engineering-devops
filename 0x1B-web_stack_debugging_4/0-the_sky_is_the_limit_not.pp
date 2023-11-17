@@ -1,12 +1,13 @@
 #nginx to accept and serve more requests
 
-exec { 'fix--for-nginx':
-  command => 'sed -i "s/15/4096/" /etc/default/nginx',
-  path    => '/usr/local/bin/:/bin/'
-} ->
+file { 'fix-for-nginx':
+  ensure  => 'file',
+  path    => '/etc/default/nginx',
+  content => inline_template('<%= File.read("/etc/default/nginx").gsub(/15/, "4096") %>'),
+}
 
 # Restart Nginx
-exec { 'nginx-restart':
+-> exec { 'nginx-restart':
   command => 'nginx restart',
-  path    => '/etc/init.d/'
+  path    => '/etc/init.d/',
 }
